@@ -1,7 +1,5 @@
 
 
-
-
 - [Task](#wrench-task)
 	- [Requirements](#mega-requirements)
 	- [What we are looking for](#mag_right-what-we-are-looking-for)
