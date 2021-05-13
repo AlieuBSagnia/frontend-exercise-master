@@ -1,6 +1,6 @@
-# Front-End Candidate Test
 
-:wave: Welcome to The Telegraph front-end candidate test
+
+
 
 - [Task](#wrench-task)
 	- [Requirements](#mega-requirements)
