@@ -17,7 +17,7 @@ var hbs = exphbs.create({
 	},
 });
 
-app.engine('handlebars', exphbs());
+app.engine("handlebars", hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('meta', meta);
 app.set("article", article);
