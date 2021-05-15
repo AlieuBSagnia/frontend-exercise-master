@@ -44,6 +44,32 @@
 
 
 		}
+		async function filterLikes() {
+
+			const data = await fetch(
+				"https://my-json-server.typicode.com/telegraph/frontend-exercise/comments?_sort=likes&_order=desc",
+
+			).then((response) => response.json()).then(data => { return data })
+			let list = []
+			list = data.map(comment => 
+			`<div class="row justify-content-between border-top px-4 py-4 ">
+                <div class="row ">
+                	<h6 class="mr-3 ">${comment.name}</h6>
+                    <small>${moment(comment.date).format('D MMM YYYY H:mm A')}</small >
+                </div >
+                <div class="row justify-content-end">
+                    <h6 class="text-right">${comment.likes} likes</h6>
+                </div>
+                <div class="row  pr-5">
+                    <p>${comment.body}</p>
+                </div>
+            </div >`
+
+			)
+			document.getElementById("comments").innerHTML = list.join("");
+
+
+		}
 
 	</script>
 
