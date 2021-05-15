@@ -6,7 +6,16 @@ const app = express();
 const article = require("./content/article.json");
 const posts = require("./content/posts.json");
 const comments = require("../db.json");
+const moment = require("moment");
 const port = 3000;
+var hbs = exphbs.create({
+	
+	helpers: {
+		formatDate: function (datetime, format) {
+			return moment(datetime).format(format);
+		},
+	},
+});
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
