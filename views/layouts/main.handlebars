@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
-	<head>
+
+<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="static/app.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -11,13 +12,41 @@
 		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/dc1f6b4c29.js" crossorigin="anonymous"></script>
 </head>
-	<body onload="getComments()">
-		{{> header }}
-		{{{ body }}}
 
-		<script>
-			
-		</script>
+<body onload="getComments()">
+	{{> header }}
+	{{{ body }}}
 
-	</body>
+	<script>
+		async function getComments() {
+
+			const data = await fetch(
+				"https://my-json-server.typicode.com/telegraph/frontend-exercise/comments",
+
+			).then((response) => response.json()).then(data => { return data })
+			let list = []
+			list = data.map(comment => 
+			`<div class="row justify-content-between border-top px-4 py-4 ">
+                <div class="row ">
+                	<h6 class="mr-3 ">${comment.name}</h6>
+                	<small>${moment(comment.date).format('D MMM YYYY H:mm A')}</small >
+                </div >
+                <div class="row justify-content-end">
+                	<h6 class="text-right">${comment.likes} likes</h6>
+            	</div>
+                <div class="row  pr-5">
+                    <p>${comment.body}</p>
+                </div>
+            </div >`
+
+			)
+			document.getElementById("comments").innerHTML = list.join("");
+
+
+		}
+
+	</script>
+
+</body>
+
 </html>
