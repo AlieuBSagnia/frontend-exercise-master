@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
 router.get("/einstein-and-churchill-both-took-daily-naps", (req, res) => {
 	res.render("post", {
 		article: req.app.get("article"),
+		meta: req.app.get('meta')
 		
 	});
 });
