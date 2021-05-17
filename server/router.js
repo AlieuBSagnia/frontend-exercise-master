@@ -8,5 +8,11 @@ router.get('/', (req, res) => {
 		posts: req.app.get("posts"),
 	});
 });
+router.get("/einstein-and-churchill-both-took-daily-naps", (req, res) => {
+	res.render("post", {
+		article: req.app.get("article"),
+		
+	});
+});
 
 module.exports = router;
