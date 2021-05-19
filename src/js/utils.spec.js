@@ -1,5 +1,8 @@
 const Utils = require("./utils");
-
+// To DO
+//  Unit testing - Ideally I should separate the JS in main.handlebars in a separate JS file and that would mean I could test it. Using mock service worker and @testing-library. 
+//  Utilizing "findByText" along with the "await" operator to verify comments are retrieved and rendered on the screen correctly. 
+// I did manage to do manual testing through an HTML validator where you can grab the source of your page through Chrome and then paste it into the validator. 
 describe( 'Utils', () => {
 	describe( 'isHomePage', () => {
 		it("should match if on homepage", () => {
@@ -35,3 +38,4 @@ describe( 'Utils', () => {
 		});
 	});
 });
+ 
