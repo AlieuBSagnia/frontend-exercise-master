@@ -1,0 +1,29 @@
+.content{
+	display: grid;
+	grid-template-columns: 2.5fr 1fr;
+	grid-gap : 128px;
+	margin: 16px 0 0 16px;
+	padding-bottom: 15vh;
+}
+
+a {
+	cursor: pointer;
+}
+
+.content__leftContainer__coverImage img{
+	width: 100%;
+}
+
+.content__leftContainer__content{
+	padding-top: 32px;
+	margin-left: 23%;
+}
+
+
+.content__leftContainer__content>p{
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 1px;
+    padding-bottom: 12px;
+}
