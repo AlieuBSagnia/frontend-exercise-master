@@ -1,5 +1,6 @@
 <div class="responsiveHeader">
-    <img src={{article.post.image}} style="object-fit: cover;" class="img-fluid responsiveHeader__image" alt="The Image for article cover">
+    <img src={{article.post.image}} style="object-fit: cover;" class="img-fluid responsiveHeader__image"
+        alt="The Image for article cover">
 </div>
 <section class="heading">
     <h1 class="heading__heading">{{article.post.title}}</h1>
@@ -10,7 +11,7 @@
 
     <div class="content__leftContainer">
         <div class="content__leftContainer__coverImage">
-            <img src={{article.post.image}}  class="img-fluid" alt="The Image for article cover">
+            <img src={{article.post.image}} class="img-fluid" alt="The Image for article cover">
         </div>
         <div class="content__leftContainer__content">
             {{{article.post.body}}}
@@ -18,7 +19,8 @@
                 {{!-- <div class="col-lg-4 col-md-4"> --}}
                     <div class="commentSection__headingLeft">
                         {{!-- <div class="row"> --}}
-                            <p> <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png" alt="" class="comment__icon" > </p>
+                            <p> <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png"
+                                    alt="" class="comment__icon"> </p>
                             <h6 class="totalComments">5 Comments</h6>
                         </div>
                         {{!--
@@ -42,16 +44,37 @@
                     {{!-- {{/each}} --}}
                 </div>
             </div>
-        {{!--</div> --}}
+            {{!--
+        </div> --}}
 
-    {{!--</div> --}}
+        {{!--
+    </div> --}}
+    <div class="readMore">
+        <h3>More Stories </h3>
+        {{#each posts.posts}}
+        {{#ifCond this.category 3}}
+        <div class="readMore__content">
 
-    
 
-            {{!-- </div> --}}
-        {{!-- </div> --}}
+            <div class="readMore__content__thumbnail">
+                {{!-- <div class="col-lg-3 col-md-3"> --}}
+                    <img src={{this.thumbnail}} alt="The Image for article cover">
+                </div>
+                {{!-- <div class="col-lg-9 col-md-9"> --}}
+                    <div class="readMore__content__content">
+                        <h6 class="text-wrap">{{this.title}}</h6>
+                        <span class="readmore">Read More</span>
+                    </div>
+                </div>
+                {{/ifCond}}
+                {{/each}}
+
+                {{!-- </div> --}}
+            {{!--
+        </div> --}}
+        {{!--
+    </div> --}}
     {{!-- </div> --}}
-{{!-- </div> --}}
-</div>
+    </div>
 
 </section>
