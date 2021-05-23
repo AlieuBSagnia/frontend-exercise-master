@@ -1,3 +1,8 @@
 <div class="responsiveHeader">
     <img src={{article.post.image}} style="object-fit: cover;" class="img-fluid responsiveHeader__image" alt="The Image for article cover">
 </div>
+<section class="heading">
+    <h1 class="heading__heading">{{article.post.title}}</h1>
+    <h6 class="heading__subHeading">{{article.post.standfirst}}</h6>
+    <p>{{formatDate article.post.date 'dddd D MMMM YYYY HH:mm a'}}</p>
+</section>
