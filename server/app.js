@@ -18,6 +18,15 @@ var hbs = exphbs.create({
 	},
 });
 
+hbs.handlebars.registerHelper('ifCond', function(v1, v2, options) {
+	// console.log(v1);
+	// console.log(v2);
+  if(v1 == v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 app.engine("handlebars", hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('meta', meta);
