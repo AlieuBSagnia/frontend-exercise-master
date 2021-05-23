@@ -6,3 +6,52 @@
     <h6 class="heading__subHeading">{{article.post.standfirst}}</h6>
     <p>{{formatDate article.post.date 'dddd D MMMM YYYY HH:mm a'}}</p>
 </section>
+<section class="content">
+
+    <div class="content__leftContainer">
+        <div class="content__leftContainer__coverImage">
+            <img src={{article.post.image}}  class="img-fluid" alt="The Image for article cover">
+        </div>
+        <div class="content__leftContainer__content">
+            {{{article.post.body}}}
+            <div class="commentSection ">
+                {{!-- <div class="col-lg-4 col-md-4"> --}}
+                    <div class="commentSection__headingLeft">
+                        {{!-- <div class="row"> --}}
+                            <p> <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png" alt="" class="comment__icon" > </p>
+                            <h6 class="totalComments">5 Comments</h6>
+                        </div>
+                        {{!--
+                    </div> --}}
+                    {{!-- <div class="col-lg-3 col-md-3 ml-auto"> --}}
+                        {{!-- <div class="row justify-content-end"> --}}
+                            <div class="commentSection__headingRight">
+                                <h6>Sort: <a onclick="filterLikes()">Likes</a> | <a onclick="filterTime()">Newest</a>
+                                </h6>
+                            </div>
+                            {{!--
+                        </div> --}}
+                    </div>
+
+                    {{!-- {{#each getComments()}} --}}
+
+                    <div id="comments">
+
+                    </div>
+
+                    {{!-- {{/each}} --}}
+                </div>
+            </div>
+        {{!--</div> --}}
+
+    {{!--</div> --}}
+
+    
+
+            {{!-- </div> --}}
+        {{!-- </div> --}}
+    {{!-- </div> --}}
+{{!-- </div> --}}
+</div>
+
+</section>
