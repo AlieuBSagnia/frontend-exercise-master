@@ -10,7 +10,7 @@ const moment = require("moment");
 const cors = require("cors");
 const port = 3000;
 var hbs = exphbs.create({
-	
+
 	helpers: {
 		formatDate: function (datetime, format) {
 			return moment(datetime).format(format);
