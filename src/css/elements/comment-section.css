@@ -11,3 +11,51 @@
 	display: flex;
 	align-items: center;
 }
+
+
+.comment__icon{
+	width: 20px;
+	margin-right: 8px;
+	margin-top: 6px;
+}
+
+.totalComments{
+	font-weight: 600;
+}
+
+.comments__comment{
+	/* padding: 16px 0; */
+	border-top: 1px solid #dee2e6;
+	border-bottom: 1px solid #dee2e6;
+}
+
+.comments__comment__heading{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.comments__comment__heading > div {
+	display: flex;
+}
+
+
+.comments__comment__username{
+	font-weight: 600;
+	margin-right: 16px;
+}
+
+.comments__comment__date{
+	font-weight: 390;
+	font-size: 12px;
+    margin-top: 24px;
+}
+
+.comments_comment_like{
+	font-weight: 400;
+}
+
+.comments__comment__content{
+	font-weight: 300;
+    margin-top: -26px;
+}
