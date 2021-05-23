@@ -1,0 +1,13 @@
+.commentSection{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 0px;
+	border-top: 1px solid #dee2e6;
+	border-bottom: 1px solid #dee2e6;
+}
+
+.commentSection__headingLeft{
+	display: flex;
+	align-items: center;
+}
