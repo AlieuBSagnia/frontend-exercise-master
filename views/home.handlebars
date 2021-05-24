@@ -1,34 +1,30 @@
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
- integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<div class="col-sm-12 d-sm-none">
-    <img src={{article.post.image}} style="object-fit: cover;" class="img-fluid" alt="The Image for article cover ">
+<div class="responsiveHeader">
+    <img src={{article.post.image}} style="object-fit: cover;" class="img-fluid responsiveHeader__image" alt="The Image for article cover">
 </div>
-<section class="offset-lg-2 col-lg-7 offset-xl-2 col-xl-7">
-    <h1>{{article.post.title}}</h1>
-    <h6>{{article.post.standfirst}}</h6>
+<section class="heading">
+    <h1 class="heading__heading">{{article.post.title}}</h1>
+    <h6 class="heading__subHeading">{{article.post.standfirst}}</h6>
     <p>{{formatDate article.post.date 'dddd D MMMM YYYY HH:mm a'}}</p>
 </section>
-<section class="px-lg-5 px-md-1 row">
-    <div class="col-lg-8 col-md-12">
-        <div class="col-lg-12 d-none d-md-block">
-
-            <img src={{article.post.image}} style="object-fit: cover;" class="img-fluid" alt="The Image for article cover" >
+<section class="content">
+    <div class="content__leftContainer">
+        <div class="content__leftContainer__coverImage">
+            <img src={{article.post.image}}  class="img-fluid" alt="The Image for article cover">
         </div>
-        <div class=" offset-lg-2 col-lg-10 ">
+        <div class="content__leftContainer__content">
             {{{article.post.body}}}
-            <div class="row px-4 justify-content-between border-top border-bottom py-4 ">
+            <div class="commentSection ">
                 {{!-- <div class="col-lg-4 col-md-4"> --}}
-                    <div class="row">
+                    <div class="commentSection__headingLeft">
                         {{!-- <div class="row"> --}}
-                            <p> <i class="fas fa-comment-alt"></i></p>
-                            <h6 class="ml-3">5 Comments</h6>
+                            <p> <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png" alt="" class="comment__icon" > </p>
+                            <h6 class="totalComments">5 Comments</h6>
                         </div>
                         {{!--
                     </div> --}}
                     {{!-- <div class="col-lg-3 col-md-3 ml-auto"> --}}
                         {{!-- <div class="row justify-content-end"> --}}
-                            <div class="">
+                            <div class="commentSection__headingRight">
                                 <h6>Sort: <a onclick="filterLikes()">Likes</a> | <a onclick="filterTime()">Newest</a>
                                 </h6>
                             </div>
@@ -45,28 +41,36 @@
                     {{!-- {{/each}} --}}
                 </div>
             </div>
-            <div class="offset-lg-1 col-lg-3 col-md-12">
-                <h5>More Stories</h5>
+        {{!--</div> --}}
 
-                {{#each posts.posts}}
-                <div class="row px-2 justify-content-between border-top border-bottom py-3">
-                    <div class="col-3">
-                        {{!-- <div class="col-lg-3 col-md-3"> --}}
-                            <img src={{this.thumbnail}} alt="The Image for article cover">
-                        </div>
-                        {{!-- <div class="col-lg-9 col-md-9"> --}}
-                            <div class="col-9">
-                                <h6 class="text-wrap">{{this.title}}</h6>
-                                <span class="readmore">Read More</span>
-                            </div>
-                        </div>
+    {{!--</div> --}}
 
-                        {{/each}}
+    <div class="readMore">
+        <h3>More Stories </h3>
+        {{#each posts.posts}}
+       
+        <div class="readMore__content">
 
-                    {{!-- </div> --}}
-                {{!-- </div> --}}
+
+            <div class="readMore__content__thumbnail">
+                {{!-- <div class="col-lg-3 col-md-3"> --}}
+                    <img src={{this.thumbnail}} alt="The Image for article cover">
+                </div>
+                {{!-- <div class="col-lg-9 col-md-9"> --}}
+                    <div class="readMore__content__content">
+                        <h6 class="text-wrap">{{this.title}}</h6>
+                        <span class="readmore">Read More</span>
+                    </div>
+                </div>
+            
+                {{/each}}
+
             {{!-- </div> --}}
         {{!-- </div> --}}
-    </div>
+    {{!-- </div> --}}
+{{!-- </div> --}}
+</div>
 
 </section>
+
+{{!-- To do - Scenario: Show associated articles --}}
