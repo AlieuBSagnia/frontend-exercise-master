@@ -6,12 +6,15 @@
 	padding-bottom: 15vh;
 }
 
-a, a:hover, a:focus, a:active {
+a,  a:focus, a:active {
 	text-decoration: none;
 	color: rgb(165, 32, 32);
 	cursor: pointer;
   }
-  
+
+a:hover{
+	color:rgb(46, 64, 163);
+}
 
 .content__leftContainer__coverImage img{
 	width: 100%;
