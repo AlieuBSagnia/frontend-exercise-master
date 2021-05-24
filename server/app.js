@@ -5,7 +5,6 @@ const meta = require("./content/meta.json");
 const app = express();
 const article = require("./content/article.json");
 const posts = require("./content/posts.json");
-// const comments = require("../db.json");
 const moment = require("moment");
 const cors = require("cors");
 const fetch = require('node-fetch');
@@ -38,7 +37,7 @@ url = `https://my-json-server.typicode.com/telegraph/frontend-exercise/comments`
 	})
 	.catch(err => console.log(err))
 
-
+// To do unit testing ; manual testing done with html validator
 	
 app.engine("handlebars", hbs.engine);
 app.set('view engine', 'handlebars');
