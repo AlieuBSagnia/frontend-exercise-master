@@ -32,13 +32,27 @@
                         </div> --}}
                     </div>
 
-                    {{!-- {{#each getComments()}} --}}
+                   {{#each comments}}
 
                     <div id="comments">
-
+                        <div class="comments__comment">
+                            <div class="comments__comment__heading">
+                                <div>
+                                    <h6 class="comments__comment__username ">{{this.name}}</h6>
+                                    <small class="comments__comment__date">{{formatDate this.date 'dddd D MMMM YYYY
+                                        HH:mm a'}}</small>
+                                </div>
+                                <div class="comments_comment_like">
+                                    <h6 class="">{{this.likes}} likes</h6>
+                                </div>
+                            </div>
+                            <div class="comments__comment__content">
+                                <p>{{this.body}}</p>
+                            </div>
+                        </div>
                     </div>
 
-                    {{!-- {{/each}} --}}
+                    {{/each}}
                 </div>
             </div>
         {{!--</div> --}}

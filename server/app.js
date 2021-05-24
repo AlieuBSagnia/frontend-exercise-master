@@ -5,7 +5,7 @@ const meta = require("./content/meta.json");
 const app = express();
 const article = require("./content/article.json");
 const posts = require("./content/posts.json");
-const comments = require("../db.json");
+// const comments = require("../db.json");
 const moment = require("moment");
 const cors = require("cors");
 const fetch = require('node-fetch');
@@ -29,23 +29,14 @@ hbs.handlebars.registerHelper('ifCond', function(v1, v2, options) {
   return options.inverse(this);
 });
 
-if ((comments)) {
-	url = `https://my-json-server.typicode.com/telegraph/frontend-exercise/comments`
-} else if ((filterLikes)) {
-	url = `https://my-json-server.typicode.com/telegraph/frontend-exercise/comments?_sort=likes&_order=desc`
-}
-else ((filterTime)) ;{
-	url = `https://my-json-server.typicode.com/telegraph/frontend-exercise/comments?_sort=date&_order=desc`;
-	
-}
+url = `https://my-json-server.typicode.com/telegraph/frontend-exercise/comments`
 
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-        app.set("comments", data);
-  })
-  .catch(err => console.log(err))
-// console.log(comments);
+	fetch(url)
+	.then(response => response.json())
+	.then(data => {
+		app.set("comments", data);
+	})
+	.catch(err => console.log(err))
 
 
 	
