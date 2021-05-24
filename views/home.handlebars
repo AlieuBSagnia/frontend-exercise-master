@@ -1,5 +1,6 @@
 <div class="responsiveHeader">
-    <img src={{article.post.image}} style="object-fit: cover;" class="img-fluid responsiveHeader__image" alt="The Image for article cover">
+    <img src={{article.post.image}} style="object-fit: cover;" class="img-fluid responsiveHeader__image"
+        alt="The Image for article cover">
 </div>
 <section class="heading">
     <h1 class="heading__heading">{{article.post.title}}</h1>
@@ -9,7 +10,7 @@
 <section class="content">
     <div class="content__leftContainer">
         <div class="content__leftContainer__coverImage">
-            <img src={{article.post.image}}  class="img-fluid" alt="The Image for article cover">
+            <img src={{article.post.image}} class="img-fluid" alt="The Image for article cover">
         </div>
         <div class="content__leftContainer__content">
             {{{article.post.body}}}
@@ -17,7 +18,8 @@
                 {{!-- <div class="col-lg-4 col-md-4"> --}}
                     <div class="commentSection__headingLeft">
                         {{!-- <div class="row"> --}}
-                            <p> <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png" alt="" class="comment__icon" > </p>
+                            <p> <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png"
+                                    alt="" class="comment__icon"> </p>
                             <h6 class="totalComments">5 Comments</h6>
                         </div>
                         {{!--
@@ -32,23 +34,39 @@
                         </div> --}}
                     </div>
 
-                    {{!-- {{#each getComments()}} --}}
+                    {{#each comments}}
 
                     <div id="comments">
-
+                        <div class="comments__comment">
+                            <div class="comments__comment__heading">
+                                <div>
+                                    <h6 class="comments__comment__username ">{{this.name}}</h6>
+                                    <small class="comments__comment__date">{{formatDate this.date 'dddd D MMMM YYYY
+                                        HH:mm a'}}</small>
+                                </div>
+                                <div class="comments_comment_like">
+                                    <h6 class="">{{this.likes}} likes</h6>
+                                </div>
+                            </div>
+                            <div class="comments__comment__content">
+                                <p>{{this.body}}</p>
+                            </div>
+                        </div>
                     </div>
 
-                    {{!-- {{/each}} --}}
+                    {{/each}}
                 </div>
             </div>
-        {{!--</div> --}}
+            {{!--
+        </div> --}}
 
-    {{!--</div> --}}
+        {{!--
+    </div> --}}
 
     <div class="readMore">
         <h3>More Stories </h3>
         {{#each posts.posts}}
-       
+
         <div class="readMore__content">
 
 
@@ -62,14 +80,15 @@
                         <span class="readmore">Read More</span>
                     </div>
                 </div>
-            
+
                 {{/each}}
 
-            {{!-- </div> --}}
-        {{!-- </div> --}}
+            {{!--
+        </div> --}}
+        {{!--
+    </div> --}}
     {{!-- </div> --}}
-{{!-- </div> --}}
-</div>
+    </div>
 
 </section>
 
